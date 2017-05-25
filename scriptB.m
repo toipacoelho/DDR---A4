@@ -1,4 +1,4 @@
-Matrizes;
+	
 miu= R*1e9/(8*1000);
 NumberLinks= sum(sum(R>0));
 lambda_s= T*1e6/(8*1000);
