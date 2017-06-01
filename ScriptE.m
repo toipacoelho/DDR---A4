@@ -5,13 +5,13 @@ n = 3;
 
 for iter=1:n
     CurrentSolution= GreedyRandomized_E();
-    CurrentObjective= Evaluate(CurrentSolution);
+    CurrentObjective= Evaluate_E(CurrentSolution);
     repeat= true;
     while repeat
         NeighbourBest= Inf;
         for i=1:size(CurrentSolution,1)
-            NeighbourSolution= BuildNeighbour(CurrentSolution,i);
-            NeighbourObjective= Evaluate(NeighbourSolution);
+            NeighbourSolution= BuildNeighbour_E(CurrentSolution,i);
+            NeighbourObjective= Evaluate_E(NeighbourSolution);
             if NeighbourObjective < NeighbourBest
                 NeighbourBest= NeighbourObjective;
                 NeighbourBestSolution= NeighbourSolution;

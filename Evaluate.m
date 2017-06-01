@@ -1,4 +1,0 @@
-function  = Evaluate(CurrentSolution)
-
-end
-
