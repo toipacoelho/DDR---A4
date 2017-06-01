@@ -1,19 +1,10 @@
-% pairs
-% npairs
-% b=randperm(npairs);
-% for i=1:npairs
-%     aux(i,:)pairs(b(i),:);
-% end
-% pairs=aux;
-
 Matrizes;
-
 GlobalBest= Inf;
 
 n = 3;
 
 for iter=1:n
-    CurrentSolution= GreedyRandomized();
+    CurrentSolution= GreedyRandomized_E();
     CurrentObjective= Evaluate(CurrentSolution);
     repeat= true;
     while repeat
@@ -34,7 +25,7 @@ for iter=1:n
         end
     end
     if CurrentObjective < GlobalBest
-        GlobalBestSolution= CurrentSolution; 
+        GlobalBestSolution= CurrentSolution;
         GlobalBest= CurrentObjective;
     end
 end
