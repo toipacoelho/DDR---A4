@@ -1,5 +1,6 @@
-function NeighbourSolution = BuildNeighbour_E(solution, i)
+function NeighbourSolution = BuildNeighbour_F(solution, i)
 Matrizes;
+lambda=solution.lambda;
 lambda_s = T * 1e6 / (8*1000);
 miu = R * 1e9 / (8*1000);
 d = L * 1e3 / 2e8;
@@ -18,8 +19,8 @@ while r(j) ~= destination
 end
 
 % route choice - by delay
-AverageDelay = (1./(miu-solution.lambda)+d);
-r = ShortestPathSym(AverageDelay,origin,destination);
+Load= lambda./miu;
+r = ShortestPathSym(Load.^2,origin,destination);
 
 % recalculate solution lambda
 solution.routes(i,:) = r;

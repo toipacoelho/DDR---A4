@@ -11,8 +11,8 @@ for k = 1:length(n)
     %Global search
     GlobalBest = Inf;
     for j = 1:n(k)
-        CurrentSolution = GreedyRandomized_E();
-        CurrentObjective = Evaluate_E(CurrentSolution);
+        CurrentSolution = GreedyRandomized_F();
+        CurrentObjective = Evaluate_F(CurrentSolution);
         repeat = true;
 
         %Local search
@@ -21,8 +21,8 @@ for k = 1:length(n)
 
             %Calculating best neightboor
             for i=1:size(CurrentSolution,1)
-                NeighbourSolution = BuildNeighbour_E(CurrentSolution,i);
-                NeighbourObjective = Evaluate_E(NeighbourSolution);
+                NeighbourSolution = BuildNeighbour_F(CurrentSolution,i);
+                NeighbourObjective = Evaluate_F(NeighbourSolution);
                 if NeighbourObjective < NeighbourBest
                     NeighbourBest = NeighbourObjective;
                     NeighbourBestSolution = NeighbourSolution;

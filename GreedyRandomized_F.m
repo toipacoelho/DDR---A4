@@ -1,4 +1,4 @@
-function solution = GreedyRandomized_E()
+function solution = GreedyRandomized_F()
 % Randomizes pair order
 
 Matrizes;
@@ -34,10 +34,8 @@ routes = zeros(npairs,17);
 for i = 1:npairs
     origin = pairs(i,1);
     destination = pairs(i,2);
-    
-    AverageDelay = (1./(miu-lambda)+d);
-    AverageDelay(isnan(AverageDelay))= 0;
-    r = ShortestPathSym(AverageDelay,origin,destination);
+    Load= lambda./miu;
+    r = ShortestPathSym(Load.^2,origin,destination);
     
     routes(i,:)= r;
     j= 1;
