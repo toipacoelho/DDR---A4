@@ -22,7 +22,7 @@ for i=1:npairs
     Load= lambda./miu;
     %Load(isnan(Load))= 0;
     %shortestpath ignora ligações que nao sao numero
-    r= ShortestPathSym(Load,origin,destination);
+    r= ShortestPathSym(Load.^2,origin,destination);
     routes(i,:)= r;
     j= 1;
     while r(j)~= destination
